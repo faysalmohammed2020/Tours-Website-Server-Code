@@ -7,8 +7,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 const port = 5000;
-//username: tourismUser
-//password: W4Zet1kzwkeKohjJ
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.uxyvb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
 
