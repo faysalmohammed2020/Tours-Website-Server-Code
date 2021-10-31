@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-const port = process.env.PORT||5000;
+const port = process.env.PORT || 5000;
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.uxyvb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
 
@@ -41,12 +41,7 @@ async function run(){
         console.log(orderResult)
         res.json(orderResult)
     })
-    // //addorders api
-    // app.get('/addOrders',async(req,res)=>{
-    //     const allOrder = allOrdersCollection.find(allOrder)
-    //     const allOrderResult = await allOrder.toArray();
-    //     res.json(allOrderResult);
-    // })
+    
     //myOrders Api
     app.get('/myOrders/:email', async(req,res) =>{
         const myOrders = await OrderCollection.find({email: req.params.email}).toArray();
